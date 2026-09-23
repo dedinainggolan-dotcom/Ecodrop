@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecodrop - Solusi Daur Ulang Minyak Jelantah Indonesia</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        eco: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-eco-500 selection:text-white">
+
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center overflow-hidden shadow-md shadow-eco-500/20 border border-slate-100">
+                        <!-- Logo EcoDrop Baru (Ganti 'logo-ecodrop.jpg' dengan nama file logo Anda) -->
+                        <img src="logo-ecodrop.jpg" alt="Logo EcoDrop" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <span class="text-2xl font-extrabold tracking-tight text-slate-900">Eco<span class="text-eco-600">Drop</span></span>
+                        <p class="text-[10px] text-slate-500 font-medium -mt-1 tracking-wider uppercase">Setetes Jelantah Jadi Berkah</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#beranda" class="text-sm font-semibold text-slate-600 hover:text-eco-600 transition">Beranda</a>
+                    <a href="#kalkulator" class="text-sm font-semibold text-slate-600 hover:text-eco-600 transition">Kalkulator</a>
+                    <a href="#harga" class="text-sm font-semibold text-slate-600 hover:text-eco-600 transition">Harga</a>
+                    <a href="#dropoint" class="text-sm font-semibold text-slate-600 hover:text-eco-600 transition">Titik Drop</a>
+                    <a href="#tentang" class="text-sm font-semibold text-slate-600 hover:text-eco-600 transition">Tentang Kami</a>
+                    <a href="#faq" class="text-sm font-semibold text-slate-600 hover:text-eco-600 transition">FAQ</a>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="#jemput" class="bg-eco-600 hover:bg-eco-700 text-white font-semibold px-5 py-2.5 rounded-xl shadow-lg shadow-eco-600/25 transition transform hover:-translate-y-0.5 flex items-center space-x-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Jemput Minyak</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-slate-600 hover:text-slate-900 focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 px-4 pt-2 pb-6 space-y-3">
+            <a href="#beranda" class="block py-2 text-slate-600 font-medium hover:text-eco-600">Beranda</a>
+            <a href="#kalkulator" class="block py-2 text-slate-600 font-medium hover:text-eco-600">Kalkulator</a>
+            <a href="#harga" class="block py-2 text-slate-600 font-medium hover:text-eco-600">Harga</a>
+            <a href="#dropoint" class="block py-2 text-slate-600 font-medium hover:text-eco-600">Titik Drop</a>
+            <a href="#tentang" class="block py-2 text-slate-600 font-medium hover:text-eco-600">Tentang Kami</a>
+            <a href="#faq" class="block py-2 text-slate-600 font-medium hover:text-eco-600">FAQ</a>
+            <div class="pt-2">
+                <a href="#jemput" class="w-full bg-eco-600 text-white font-semibold py-3 rounded-xl flex items-center justify-center space-x-2 shadow-md">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Jemput Minyak Sekarang</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-32 bg-gradient-to-b from-eco-50/60 via-white to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Hero Left Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 bg-eco-100 text-eco-800 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide">
+                        <i class="fa-solid fa-coins text-eco-600"></i>
+                        <span>Harga Beli Tinggi hingga Rp7.000 / Liter</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                        Ubah Minyak Jelantah Jadi <span class="text-eco-600 decoration-wavy underline-offset-8">Cuan & Lingkungan Sehat</span>
+                    </h1>
+                    <p class="text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Jangan buang sisa minyak goreng Anda ke saluran air atau tanah! Ecodrop siap membeli minyak jelantah rumah tangga maupun komersial Anda dengan harga terbaik dan proses penjemputan gratis.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#jemput" class="w-full sm:w-auto bg-eco-600 hover:bg-eco-700 text-white font-bold px-8 py-4 rounded-2xl shadow-xl shadow-eco-600/30 transition transform hover:-translate-y-1 text-center flex items-center justify-center space-x-3">
+                            <i class="fa-solid fa-truck-fast text-xl"></i>
+                            <span>Jadwalkan Penjemputan Gratis</span>
+                        </a>
+                        <a href="#kalkulator" class="w-full sm:w-auto bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 font-semibold px-8 py-4 rounded-2xl shadow-sm transition text-center flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-calculator text-eco-600"></i>
+                            <span>Hitung Potensi Cuan</span>
+                        </a>
+                    </div>
+
+                    <!-- Trust indicators -->
+                    <div class="pt-8 border-t border-slate-100 grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0">
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-slate-900">50rb+</p>
+                            <p class="text-xs sm:text-sm text-slate-500 font-medium">Liter Terkumpul</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-slate-900">1.200+</p>
+                            <p class="text-xs sm:text-sm text-slate-500 font-medium">Mitra Rumah Tangga</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-slate-900">100%</p>
+                            <p class="text-xs sm:text-sm text-slate-500 font-medium">Ramah Lingkungan</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Right Image/Card Widget -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Decorative background glow -->
+                        <div class="absolute -inset-4 bg-gradient-to-r from-eco-500 to-emerald-400 rounded-3xl blur-2xl opacity-30 animate-pulse"></div>
+                        
+                        <!-- Main Card -->
+                        <div class="relative bg-white rounded-3xl p-6 sm:p-8 shadow-2xl border border-slate-100 space-y-6">
+                            <div class="flex items-center justify-between">
+                                <span class="bg-eco-50 text-eco-700 text-xs font-bold px-3 py-1 rounded-lg uppercase tracking-wider">Live Rate Hari Ini</span>
+                                <span class="flex items-center text-xs text-emerald-600 font-semibold bg-emerald-50 px-2.5 py-1 rounded-full"><span class="w-2 h-2 rounded-full bg-emerald-500 mr-1.5 animate-ping"></span> Update Aktif</span>
+                            </div>
+
+                            <div class="bg-slate-50 rounded-2xl p-5 border border-slate-100 space-y-3">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-slate-600 text-sm font-medium">Minyak Jelantah Jernih</span>
+                                    <span class="text-eco-600 font-bold text-lg">Rp 7.000 <span class="text-xs font-normal text-slate-500">/liter</span></span>
+                                </div>
+                                <div class="flex justify-between items-center border-t border-slate-200/60 pt-3">
+                                    <span class="text-slate-600 text-sm font-medium">Minyak Jelantah Campur</span>
+                                    <span class="text-eco-600 font-bold text-lg">Rp 6.000 <span class="text-xs font-normal text-slate-500">/liter</span></span>
+                                </div>
+                            </div>
+
+                            <div class="space-y-3">
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-6 h-6 rounded-full bg-eco-100 text-eco-600 flex items-center justify-center shrink-0 mt-0.5">
+                                        <i class="fa-solid fa-check text-xs"></i>
+                                    </div>
+                                    <p class="text-sm text-slate-600">Penjemputan gratis langsung dari rumah tanpa repot.</p>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-6 h-6 rounded-full bg-eco-100 text-eco-600 flex items-center justify-center shrink-0 mt-0.5">
+                                        <i class="fa-solid fa-check text-xs"></i>
+                                    </div>
+                                    <p class="text-sm text-slate-600">Pembayaran instan via Transfer Bank / E-Wallet / Tunai.</p>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-6 h-6 rounded-full bg-eco-100 text-eco-600 flex items-center justify-center shrink-0 mt-0.5">
+                                        <i class="fa-solid fa-check text-xs"></i>
+                                    </div>
+                                    <p class="text-sm text-slate-600">Diolah secara profesional menjadi Biodiesel berkelanjutan.</p>
+                                </div>
+                            </div>
+
+                            <a href="#jemput" class="block w-full py-3.5 bg-slate-900 hover:bg-slate-800 text-white text-center font-bold rounded-xl shadow-lg transition">
+                                Jual Minyak Sekarang
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Calculator Section -->
+    <section id="kalkulator" class="py-20 bg-slate-100/70 border-y border-slate-200/60">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-space mb-12 text-center">
+                <span class="text-eco-600 font-bold text-sm tracking-wider uppercase bg-eco-100 px-3 py-1 rounded-full">Simulasi Keuntungan</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">Kalkulator Cuan Jelantah</h2>
+                <p class="text-slate-600 mt-2 max-w-xl mx-auto">Berapa liter sisa minyak goreng di rumah Anda dalam sebulan? Hitung estimasi uang tunai yang bisa Anda dapatkan!</p>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-xl border border-slate-200/80 p-6 sm:p-10">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                    <!-- Calculator Inputs -->
+                    <div class="space-y-6">
+                        <div>
+                            <label for="volume-slider" class="block text-sm font-semibold text-slate-700 mb-2 flex justify-between">
+                                <span>Jumlah Minyak Jelantah</span>
+                                <span id="volume-display" class="text-eco-600 font-bold text-lg">10 Liter</span>
+                            </label>
+                            <input id="volume-slider" type="range" min="1" max="100" value="10" class="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-eco-600">
+                            <div class="flex justify-between text-xs text-slate-400 mt-1">
+                                <span>1 Liter</span>
+                                <span>50 Liter</span>
+                                <span>100+ Liter</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Kualitas Minyak</label>
+                            <div class="grid grid-cols-2 gap-4">
+                                <button type="button" id="quality-jernih" onclick="setQuality(7000, 'jernih')" class="p-4 rounded-2xl border-2 border-eco-600 bg-eco-50/50 text-left transition flex flex-col justify-between">
+                                    <span class="text-xs text-slate-500 font-medium">Grade A</span>
+                                    <span class="text-sm font-bold text-slate-900 mt-1">Jernih / Kuning</span>
+                                    <span class="text-xs text-eco-600 font-bold mt-2">Rp 7.000 /L</span>
+                                </button>
+                                <button type="button" id="quality-campur" onclick="setQuality(6000, 'campur')" class="p-4 rounded-2xl border-2 border-slate-200 bg-white text-left transition flex flex-col justify-between hover:border-slate-300">
+                                    <span class="text-xs text-slate-500 font-medium">Grade B</span>
+                                    <span class="text-sm font-bold text-slate-900 mt-1">Agak Gelap / Campur</span>
+                                    <span class="text-xs text-eco-600 font-bold mt-2">Rp 6.000 /L</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Calculator Results Output -->
+                    <div class="bg-gradient-to-br from-eco-900 to-eco-800 text-white rounded-2xl p-6 sm:p-8 flex flex-col justify-between space-y-6 shadow-xl">
+                        <div>
+                            <span class="text-eco-200 text-xs font-semibold uppercase tracking-widest">Estimasi Total Pendapatan</span>
+                            <div class="mt-2 flex items-baseline space-x-2">
+                                <span id="total-cuan" class="text-4xl sm:text-5xl font-black text-white tracking-tight">Rp 70.000</span>
+                            </div>
+                            <p class="text-eco-200/80 text-xs mt-2">*Estimasi dihitung berdasarkan harga pasar saat ini dan dapat langsung dicairkan saat penjemputan.</p>
+                        </div>
+
+                        <div class="border-t border-eco-700/60 pt-6 space-y-3">
+                            <div class="flex items-center text-xs sm:text-sm text-eco-100 space-x-2">
+                                <i class="fa-solid fa-tree text-eco-400"></i>
+                                <span>Menyelamatkan <span id="saved-water" class="font-bold text-white">10.000 liter</span> air dari pencemaran.</span>
+                            </div>
+                            <div class="flex items-center text-xs sm:text-sm text-eco-100 space-x-2">
+                                <i class="fa-solid fa-shield-heart text-eco-400"></i>
+                                <span>Mencegah penggunaan ulang minyak tidak sehat.</span>
+                            </div>
+                        </div>
+
+                        <a href="#jemput" class="w-full bg-white hover:bg-eco-50 text-eco-900 font-bold py-3.5 rounded-xl text-center shadow-md transition block">
+                            Jual Jelantah Ini Sekarang
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price Tier List -->
+    <section id="harga" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-eco-600 font-bold text-sm tracking-wider uppercase bg-eco-100 px-3 py-1 rounded-full">Transparansi Harga</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">Daftar Harga Kategori Minyak</h2>
+                <p class="text-slate-600 mt-2">Kami memberikan harga kompetitif baik untuk skala rumah tangga maupun UMKM / Pabrik kuliner.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Tier 1 -->
+                <div class="bg-slate-50 rounded-3xl p-8 border border-slate-200 flex flex-col justify-between transition hover:shadow-lg">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center text-xl font-bold mb-6">
+                            <i class="fa-solid fa-droplet"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">Jelantah Rumah Tangga</h3>
+                        <p class="text-slate-500 text-sm mt-1">Sisa penggorengan harian skala rumah.</p>
+                        
+                        <div class="mt-6 mb-6">
+                            <span class="text-3xl font-black text-slate-900">Rp 6.000 - 7.000</span>
+                            <span class="text-slate-500 text-sm"> /liter</span>
+                        </div>
+
+                        <ul class="space-y-3 text-sm text-slate-600 mb-8">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-eco-600 mr-2.5"></i> Minimal penjemputan 5 Liter</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-eco-600 mr-2.5"></i> Wadah botol/jerigen disediakan</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-eco-600 mr-2.5"></i> Pembayaran cash/transfer</li>
+                        </ul>
+                    </div>
+                    <a href="#jemput" class="w-full bg-white hover:bg-slate-100 text-slate-800 font-semibold py-3 rounded-xl border border-slate-200 text-center transition">
+                        Pilih Kategori Ini
+                    </a>
+                </div>
+
+                <!-- Tier 2 (Featured) -->
+                <div class="bg-gradient-to-b from-eco-900 to-eco-800 text-white rounded-3xl p-8 border-2 border-eco-500 flex flex-col justify-between shadow-xl relative transform md:-translate-y-2">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-eco-500 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow">
+                        Paling Populer
+                    </div>
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-white/10 text-eco-300 flex items-center justify-center text-xl font-bold mb-6">
+                            <i class="fa-solid fa-store"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">UMKM Kuliner & Resto</h3>
+                        <p class="text-eco-200 text-sm mt-1">Untuk warung makan, cafe, katering, dan restoran.</p>
+                        
+                        <div class="mt-6 mb-6">
+                            <span class="text-3xl font-black text-white">Rp 7.000 - 8.000</span>
+                            <span class="text-eco-200 text-sm"> /liter</span>
+                        </div>
+
+                        <ul class="space-y-3 text-sm text-eco-100 mb-8">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-eco-400 mr-2.5"></i> Jadwal jemput rutin mingguan</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-eco-400 mr-2.5"></i> Disediakan drum/jerigen khusus</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-eco-400 mr-2.5"></i> Sertifikat kepedulian lingkungan</li>
+                        </ul>
+                    </div>
+                    <a href="#jemput" class="w-full bg-eco-500 hover:bg-eco-600 text-white font-bold py-3 rounded-xl text-center shadow-lg transition">
+                        Daftar Mitra UMKM
+                    </a>
+                </div>
+
+                <!-- Tier 3 -->
+                <div class="bg-slate-50 rounded-3xl p-8 border border-slate-200 flex flex-col justify-between transition hover:shadow-lg">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-indigo-100 text-indigo-700 flex items-center justify-center text-xl font-bold mb-6">
+                            <i class="fa-solid fa-industry"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">Industri & Pabrik</h3>
+                        <p class="text-slate-500 text-sm mt-1">Volume besar dari pabrik makanan atau hotel.</p>
+                        
+                        <div class="mt-6 mb-6">
+                            <span class="text-3xl font-black text-slate-900">Negosiasi</span>
+                            <span class="text-slate-500 text-sm"> /liter</span>
+                        </div>
+
+                        <ul class="space-y-3 text-sm text-slate-600 mb-8">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-eco-600 mr-2.5"></i> Kontrak resmi & legalitas lengkap</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-eco-600 mr-2.5"></i> Armada jemput khusus truk/pickup</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-eco-600 mr-2.5"></i> Laporan pengelolaan limbah B3</li>
+                        </ul>
+                    </div>
+                    <a href="#jemput" class="w-full bg-white hover:bg-slate-100 text-slate-800 font-semibold py-3 rounded-xl border border-slate-200 text-center transition">
+                        Hubungi Tim Bisnis
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Drop Point Locations Section -->
+    <section id="dropoint" class="py-20 bg-slate-100/70 border-t border-slate-200/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-eco-600 font-bold text-sm tracking-wider uppercase bg-eco-100 px-3 py-1 rounded-full">Titik Drop & Bank Sampah</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">Kunjungi Drop Point Terdekat</h2>
+                <p class="text-slate-600 mt-2">Ingin setor langsung minyak jelantah Anda? Kunjungi titik drop point resmi Ecodrop di kota Anda.</p>
+            </div>
+
+            <!-- City Filter Tabs -->
+            <div class="flex flex-wrap justify-center gap-3 mb-10">
+                <button onclick="filterCity('all')" class="city-btn active-city px-5 py-2.5 rounded-xl font-semibold text-sm bg-eco-600 text-white shadow transition">Semua Kota</button>
+                <button onclick="filterCity('bekasi')" class="city-btn px-5 py-2.5 rounded-xl font-semibold text-sm bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 transition">Bekasi</button>
+                <button onclick="filterCity('serang')" class="city-btn px-5 py-2.5 rounded-xl font-semibold text-sm bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 transition">Serang</button>
+                <button onclick="filterCity('tarutung')" class="city-btn px-5 py-2.5 rounded-xl font-semibold text-sm bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 transition">Tarutung</button>
+            </div>
+
+            <!-- Locations Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="drop-points-container">
+                <!-- Card 1 -->
+                <div class="drop-card bg-white rounded-2xl p-6 shadow-sm border border-slate-200 space-y-4" data-city="bekasi">
+                    <div class="flex justify-between items-start">
+                        <span class="bg-eco-50 text-eco-700 text-xs font-bold px-2.5 py-1 rounded-md">Bulak Kapal</span>
+                        <span class="text-xs text-slate-400 font-medium">Buka Setiap Hari</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">Drop Point Ecodrop Bekasi Timur</h3>
+                    <p class="text-sm text-slate-600 flex items-start space-x-2">
+                        <i class="fa-solid fa-location-dot text-eco-600 mt-1 shrink-0"></i>
+                        <span>Jl. Ternate 3 no. 240 RT 003/018 ,Kelurahan Aren Jaya, Kecamatan Bekasi Timur, 17111</span>
+                    </p>
+                    <div class="pt-2 border-t border-slate-100 flex justify-between items-center text-xs text-slate-500">
+                        <span><i class="fa-regular fa-clock mr-1"></i> 08.00 - 17.00 WIB</span>
+                        <a href="https://wa.me/6285216431790?text=Halo%20Ecodrop,%20saya%20mau%20setor%20Jelantah%20ke%20Drop%20Point%20Bulak%20kapal,%20Bekasi%20Timur" target="_blank" class="text-eco-600 font-bold hover:underline flex items-center">Arahkan <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="drop-card bg-white rounded-2xl p-6 shadow-sm border border-slate-200 space-y-4" data-city="serang">
+                    <div class="flex justify-between items-start">
+                        <span class="bg-eco-50 text-eco-700 text-xs font-bold px-2.5 py-1 rounded-md">Serang</span>
+                        <span class="text-xs text-slate-400 font-medium">Senin - Sabtu</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">Drop Point Ciujung </h3>
+                    <p class="text-sm text-slate-600 flex items-start space-x-2">
+                        <i class="fa-solid fa-location-dot text-eco-600 mt-1 shrink-0"></i>
+                        <span>Perum Ciujung City, Jl.Gn.Kerinci Raya No 103A, ds Kendayakan, Kec.Kragilan, Kab. Serang, Banten, 42185</span>
+                    </p>
+                    <div class="pt-2 border-t border-slate-100 flex justify-between items-center text-xs text-slate-500">
+                        <span><i class="fa-regular fa-clock mr-1"></i> 09.00 - 16.00 WIB</span>
+                        <a href="https://wa.me/6285216431790?text=Halo%20Ecodrop,%20saya%20mau%20setor%20Jelantah%20ke%20Drop%20Point%20Ciujung%20City%20Serang" target="_blank" class="text-eco-600 font-bold hover:underline flex items-center">Arahkan <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="drop-card bg-white rounded-2xl p-6 shadow-sm border border-slate-200 space-y-4" data-city="tarutung">
+                    <div class="flex justify-between items-start">
+                        <span class="bg-eco-50 text-eco-700 text-xs font-bold px-2.5 py-1 rounded-md">Tarutung</span>
+                        <span class="text-xs text-slate-400 font-medium">Senin - Sabtu</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">Ecodrop Hub Tarutung</h3>
+                    <p class="text-sm text-slate-600 flex items-start space-x-2">
+                        <i class="fa-solid fa-location-dot text-eco-600 mt-1 shrink-0"></i>
+                        <span>SMA N 3 Tarutung, Jl. S M Simanjuntak, Hutatoruan VI, Kec. Tarutung, Kabupaten Tapanuli Utara, Sumatera Utara, 22411</span>
+                    </p>
+                    <div class="pt-2 border-t border-slate-100 flex justify-between items-center text-xs text-slate-500">
+                        <span><i class="fa-regular fa-clock mr-1"></i> 08.00 - 18.00 WIB</span>
+                        <a href="https://wa.me/6285216431790?text=Halo%20Ecodrop,%20saya%20mau%20setor%20Jelantah%20ke%20Drop%20Point%20Tarutung" target="_blank" class="text-eco-600 font-bold hover:underline flex items-center">Arahkan <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works / Tentang Kami -->
+    <section id="tentang" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <span class="text-eco-600 font-bold text-sm tracking-wider uppercase bg-eco-100 px-3 py-1 rounded-full">Cara Kerja Mudah</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">3 Langkah Mudah Ubah Jelantah Jadi Cuan</h2>
+                    <p class="text-slate-600">Tidak perlu repot membuang limbah berbahaya. Cukup kumpulkan di rumah dan biarkan tim kami yang mengambilnya.</p>
+                    
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-xl bg-eco-600 text-white font-bold flex items-center justify-center shrink-0 shadow-md">1</div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-lg">Kumpulkan Minyak</h4>
+                                <p class="text-sm text-slate-600">Simpan sisa minyak goreng dingin ke dalam wadah bersih atau jerigen bekas.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-xl bg-eco-600 text-white font-bold flex items-center justify-center shrink-0 shadow-md">2</div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-lg">Jadwalkan Penjemputan</h4>
+                                <p class="text-sm text-slate-600">Isi form WhatsApp kami atau datang langsung ke drop point terdekat.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-xl bg-eco-600 text-white font-bold flex items-center justify-center shrink-0 shadow-md">3</div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-lg">Terima Pembayaran Tunai</h4>
+                                <p class="text-sm text-slate-600">Tim kami menimbang minyak di tempat dan langsung membayar tunai / transfer.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual box / Image placeholder -->
+                <div class="relative">
+                    <div class="bg-gradient-to-br from-eco-500 to-emerald-700 rounded-3xl p-8 sm:p-12 text-white shadow-2xl relative overflow-hidden">
+                        <div class="absolute -right-10 -bottom-10 opacity-10 text-9xl">
+                            <i class="fa-solid fa-seedling"></i>
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-extrabold mb-4">Misi Hijau Bersama Ecodrop</h3>
+                        <p class="text-eco-100 text-sm sm:text-base leading-relaxed mb-6">
+                            Tahukah Anda? 1 liter minyak jelantah yang dibuang sembarangan dapat mencemari hingga 1.000 liter air bersih. Dengan mendaur ulang minyak jelantah bersama kami, Anda ikut serta melindungi masa depan bumi dan kesehatan keluarga Indonesia.
+                        </p>
+                        <div class="inline-flex items-center space-x-3 bg-white/10 px-4 py-2 rounded-xl backdrop-blur-sm">
+                            <i class="fa-solid fa-earth-asia text-eco-300 text-xl"></i>
+                            <span class="text-xs font-semibold">Bersama Kita Wujudkan Zero Waste Indonesia</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Contact / Pickup Scheduling Form -->
+    <section id="jemput" class="py-20 bg-slate-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#22c55e_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-eco-400 font-bold text-sm tracking-wider uppercase bg-eco-950 px-3 py-1 rounded-full border border-eco-800">Form Penjemputan</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">Jadwalkan Penjemputan via WhatsApp</h2>
+                <p class="text-slate-400 mt-2">Isi formulir singkat di bawah ini dan sistem kami akan langsung mengarahkan Anda ke WhatsApp kurir Ecodrop.</p>
+            </div>
+
+            <div class="bg-white text-slate-800 rounded-3xl p-8 sm:p-12 shadow-2xl">
+                <form id="pickup-form" onsubmit="submitWhatsAppForm(event)" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Nama Lengkap</label>
+                            <input type="text" id="form-name" required placeholder="cth. Budi Santoso" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-eco-600 bg-slate-50">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Nomor WhatsApp / HP</label>
+                            <input type="tel" id="form-phone" required placeholder="cth. 08123456789" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-eco-600 bg-slate-50">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Estimasi Jumlah Minyak</label>
+                            <select id="form-amount" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-eco-600 bg-slate-50">
+                                <option value="5 - 10 Liter">5 - 10 Liter</option>
+                                <option value="10 - 25 Liter">10 - 25 Liter</option>
+                                <option value="25 - 50 Liter">25 - 50 Liter</option>
+                                <option value="50+ Liter (Skala UMKM/Resto)">50+ Liter (Skala UMKM/Resto)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Kota / Wilayah</label>
+                            <select id="form-city" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-eco-600 bg-slate-50">
+                                <option value="Jakarta">Bekasi</option>
+                                <option value="Bandung">Serang</option>
+                                <option value="Surabaya">Tarutung</option>
+                                <option value="Kota Lainnya">Kota Lainnya</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">Alamat Lengkap Penjemputan</label>
+                        <textarea id="form-address" required rows="3" placeholder="Nama jalan, nomor rumah, RT/RW, kelurahan, catatan patokan..." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-eco-600 bg-slate-50"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-eco-600 hover:bg-eco-700 text-white font-bold py-4 rounded-xl shadow-lg shadow-eco-600/30 transition flex items-center justify-center space-x-3 text-lg">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                        <span>Kirim Permintaan ke WhatsApp</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-slate-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-eco-600 font-bold text-sm tracking-wider uppercase bg-eco-100 px-3 py-1 rounded-full">Pertanyaan Umum</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">Sering Ditanyakan (FAQ)</h2>
+                <p class="text-slate-600 mt-2">Temukan jawaban seputar layanan pengumpulan minyak jelantah Ecodrop.</p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+                    <button onclick="toggleFaq(1)" class="w-full px-6 py-4 text-left font-bold text-slate-900 flex justify-between items-center focus:outline-none">
+                        <span>Bagaimana kriteria minyak jelantah yang diterima?</span>
+                        <i id="faq-icon-1" class="fa-solid fa-chevron-down text-eco-600 transition-transform"></i>
+                    </button>
+                    <div id="faq-content-1" class="hidden px-6 pb-4 text-sm text-slate-600 border-t border-slate-100 pt-3">
+                        Kami menerima minyak sisa penggorengan rumah tangga atau komersial. Minyak yang jernih/kuning (Grade A) dihargai lebih tinggi daripada minyak yang sudah sangat gelap atau tercampur air/ampas berat. Pastikan sudah didinginkan sebelum dimasukkan ke jerigen.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+                    <button onclick="toggleFaq(2)" class="w-full px-6 py-4 text-left font-bold text-slate-900 flex justify-between items-center focus:outline-none">
+                        <span>Berapakah minimal volume untuk penjemputan gratis?</span>
+                        <i id="faq-icon-2" class="fa-solid fa-chevron-down text-eco-600 transition-transform"></i>
+                    </button>
+                    <div id="faq-content-2" class="hidden px-6 pb-4 text-sm text-slate-600 border-t border-slate-100 pt-3">
+                        Untuk layanan jemput gratis ke rumah, minimal akumulasi minyak adalah 5 liter. Jika kurang dari 5 liter, Anda dapat menyetorkannya langsung ke titik drop point (Drop Point) terdekat kami.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+                    <button onclick="toggleFaq(3)" class="w-full px-6 py-4 text-left font-bold text-slate-900 flex justify-between items-center focus:outline-none">
+                        <span>Bagaimana cara pembayaran dilakukan?</span>
+                        <i id="faq-icon-3" class="fa-solid fa-chevron-down text-eco-600 transition-transform"></i>
+                    </button>
+                    <div id="faq-content-3" class="hidden px-6 pb-4 text-sm text-slate-600 border-t border-slate-100 pt-3">
+                        Pembayaran dilakukan secara langsung di tempat setelah tim kami menimbang jumlah minyak jelantah Anda. Anda bisa memilih pembayaran tunai, transfer bank, atau e-wallet (GoPay/OVO/Dana).
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+                    <button onclick="toggleFaq(4)" class="w-full px-6 py-4 text-left font-bold text-slate-900 flex justify-between items-center focus:outline-none">
+                        <span>Diolah menjadi apakah minyak jelantah ini?</span>
+                        <i id="faq-icon-4" class="fa-solid fa-chevron-down text-eco-600 transition-transform"></i>
+                    </button>
+                    <div id="faq-content-4" class="hidden px-6 pb-4 text-sm text-slate-600 border-t border-slate-100 pt-3">
+                        Minyak jelantah yang terkumpul dikirim ke fasilitas mitra resmi untuk diolah menjadi Biodiesel ramah lingkungan serta produk oleokimia bernilai guna lainnya, sehingga mencegah pencemaran lingkungan.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-16 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                <div class="space-y-4 md:col-span-1">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-9 h-9 rounded-xl bg-eco-600 flex items-center justify-center text-white">
+                            <i class="fa-solid fa-leaf text-lg"></i>
+                        </div>
+                        <span class="text-2xl font-extrabold text-white">Eco<span class="text-eco-500">drop</span></span>
+                    </div>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Platform daur ulang minyak jelantah terpercaya di Indonesia. Ubah limbah dapur Anda menjadi berkah ekonomi dan kelestarian bumi.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Navigasi Cepat</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#beranda" class="hover:text-white transition">Beranda</a></li>
+                        <li><a href="#kalkulator" class="hover:text-white transition">Kalkulator Cuan</a></li>
+                        <li><a href="#harga" class="hover:text-white transition">Harga Jelantah</a></li>
+                        <li><a href="#dropoint" class="hover:text-white transition">Titik Drop Point</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Dukungan & Legal</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#faq" class="hover:text-white transition">Pusat Bantuan (FAQ)</a></li>
+                        <li><a href="#jemput" class="hover:text-white transition">Syarat & Ketentuan</a></li>
+                        <li><a href="#" class="hover:text-white transition">Kebijakan Privasi</a></li>
+                        <li><a href="#" class="hover:text-white transition">Sertifikasi Lingkungan</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Hubungi Kami</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-phone text-eco-500"></i>
+                            <span>+62 852-1643-1790</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-envelope text-eco-500"></i>
+                            <span>halo@ecodrop.com</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-location-dot text-eco-500"></i>
+                            <span>Tarutung, Indonesia</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500">
+                <p>&copy; 2026 Ecodrop Indonesia. All rights reserved. Inspired by Ecodrop.com</p>
+                <div class="flex space-x-6 mt-4 sm:mt-0">
+                    <a href="#" class="hover:text-eco-500 transition"><i class="fa-brands fa-instagram text-lg"></i></a>
+                    <a href="#" class="hover:text-eco-500 transition"><i class="fa-brands fa-tiktok text-lg"></i></a>
+                    <a href="#" class="hover:text-eco-500 transition"><i class="fa-brands fa-linkedin text-lg"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Code -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Calculator Logic
+        let currentRate = 7000;
+        let selectedQualityType = 'jernih';
+
+        const slider = document.getElementById('volume-slider');
+        const volumeDisplay = document.getElementById('volume-display');
+        const totalCuan = document.getElementById('total-cuan');
+        const savedWater = document.getElementById('saved-water');
+        const btnJernih = document.getElementById('quality-jernih');
+        const btnCampur = document.getElementById('quality-campur');
+
+        function updateCalculation() {
+            const liters = parseInt(slider.value);
+            volumeDisplay.innerText = liters + ' Liter';
+            const total = liters * currentRate;
+            totalCuan.innerText = 'Rp ' + total.toLocaleString('id-ID');
+            savedWater.innerText = (liters * 1000).toLocaleString('id-ID') + ' liter';
+        }
+
+        slider.addEventListener('input', updateCalculation);
+
+        function setQuality(rate, type) {
+            currentRate = rate;
+            selectedQualityType = type;
+            if (type === 'jernih') {
+                btnJernih.className = "p-4 rounded-2xl border-2 border-eco-600 bg-eco-50/50 text-left transition flex flex-col justify-between";
+                btnCampur.className = "p-4 rounded-2xl border-2 border-slate-200 bg-white text-left transition flex flex-col justify-between hover:border-slate-300";
+            } else {
+                btnCampur.className = "p-4 rounded-2xl border-2 border-eco-600 bg-eco-50/50 text-left transition flex flex-col justify-between";
+                btnJernih.className = "p-4 rounded-2xl border-2 border-slate-200 bg-white text-left transition flex flex-col justify-between hover:border-slate-300";
+            }
+            updateCalculation();
+        }
+
+        // City Filter for Drop Points
+        function filterCity(city) {
+            const cards = document.querySelectorAll('.drop-card');
+            const buttons = document.querySelectorAll('.city-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-eco-600', 'text-white', 'shadow');
+                btn.classList.add('bg-white', 'text-slate-600', 'border', 'border-slate-200');
+            });
+            event.target.classList.remove('bg-white', 'text-slate-600', 'border', 'border-slate-200');
+            event.target.classList.add('bg-eco-600', 'text-white', 'shadow');
+
+            cards.forEach(card => {
+                if (city === 'all' || card.getAttribute('data-city') === city) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // FAQ Toggle
+        function toggleFaq(id) {
+            const content = document.getElementById('faq-content-' + id);
+            const icon = document.getElementById('faq-icon-' + id);
+            content.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+
+        // WhatsApp Form Submit
+        function submitWhatsAppForm(e) {
+            e.preventDefault();
+            const name = document.getElementById('form-name').value;
+            const phone = document.getElementById('form-phone').value;
+            const amount = document.getElementById('form-amount').value;
+            const city = document.getElementById('form-city').value;
+            const address = document.getElementById('form-address').value;
+
+            const text = `Halo Tim Ecodrop,%0A%0ASaya ingin menjadwalkan penjemputan minyak jelantah:%0A- Nama: ${encodeURIComponent(name)}%0A- No. HP: ${encodeURIComponent(phone)}%0A- Estimasi Jumlah: ${encodeURIComponent(amount)}%0A- Kota: ${encodeURIComponent(city)}%0A- Alamat: ${encodeURIComponent(address)}%0A%0AMohon konfirmasi penjemputannya. Terima kasih!`;
+            
+            const waUrl = `https://wa.me/6285216431790?text=${text}`;
+            window.open(waUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
